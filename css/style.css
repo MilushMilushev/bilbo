@@ -55,17 +55,19 @@ td { padding: 0; }
 	Basic Styles
 \* ------------------------------------------------------------ */
 
-body { font-family: 'Raleway', sans-serif; color: #5A3733; font-size: 20px; }
+body { font-family: 'Raleway', sans-serif; color: #333; font-size: 20px; }
 img { max-width: 100%; height: auto; }
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 .shell-secondary { max-width: 960px; }
 
-.has-ds p { margin-bottom: 15px; }
+.has-ds p { margin-bottom: 30px; }
 .has-ds p:last-child { margin-bottom: 0px; }
 
-.title-primary { font-family: 'Signika', sans-serif; color: #fff; font-size: 50px; text-align: center; position: relative; z-index: 2; }
+.title-primary { font-family: 'Signika', sans-serif; color: #fff; font-size: 72px; position: relative; z-index: 2; line-height: 1; margin-bottom: 15px; font-weight: normal; }
 .title-secondary { font-size: 48px; font-family: 'Signika', sans-serif; text-align: center; margin-bottom: 20px; }
 .title-tertiary { color: #ed3237; font-size: 18px; text-align: center; }
+
+section { padding: 50px 0; }
 
 /* ------------------------------------------------------------ *\
 	Section Secondary
@@ -77,17 +79,18 @@ img { max-width: 100%; height: auto; }
 	Buttons
 \* ------------------------------------------------------------ */
 
-.btn { display: inline-block; transition: background 0.2s; background: #ed3237; color: #fff; border-radius: 36px; text-align: center; }
-.btn:hover { text-decoration: none; background: #5A3733; }
+.btn { display: inline-block; transition: background 0.2s; background: transparent; color: inherit; border-radius: 36px; text-align: center; border: 1px solid #333; }
+.btn:hover { text-decoration: none; background: #ed3237; color: #fff; border-color: #ed3237; }
 .btn.btn-download { padding: 10px 15px; }
 .btn-download span { display: inline-block; vertical-align: middle; font-weight: 700; margin-left: 5px; }
-.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; }
+.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #fff; }
+.btn.btn-large:hover { background: #fff; color: #ed3237; }
 
 /* ------------------------------------------------------------ *\
 	Header
 \* ------------------------------------------------------------ */
 
-.header { background-repeat: repeat-x; background-image: url(images/nav-pattern.png); background-position: 0 100%;     border-top: 4px solid #ed3237; }
+.header { }
 .logo { width: 119px; display: block; }
 .logo img { width: 100%; height: auto; }
 
@@ -98,25 +101,19 @@ img { max-width: 100%; height: auto; }
 .nav ul li { display: inline-block; }
 .nav ul li a { display: block; padding: 15px; font-weight: 700; }
 .nav ul li a:hover { text-decoration: none; }
-.nav ul li span { color: #5A3733; transition: color 0.2s; }
+.nav ul li span { color: #333; transition: color 0.2s; }
 .nav ul li:hover span { color: #ed3237; }
 
 /* ------------------------------------------------------------ *\
 	Intro
 \* ------------------------------------------------------------ */
 
-.intro { overflow: hidden; }
-.intro h1 { font-size: 72px; color: #5A3733; font-family: 'Signika', sans-serif; line-height: 1; margin-bottom: 15px; }
+.intro { overflow: hidden; background-image: url(images/about.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; position: relative; z-index: 1; color: #fff; }
+.intro .shell { position: relative; z-index: 2; }
+.intro:before { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(90, 55, 51, 0.3); z-index: 1; }
 .intro p { font-size: 20px; margin-bottom: 30px; }
 .intro-body { display: flex; align-items: center; min-height: 520px; padding: 64px 0; position: relative;  }
 .intro-content { width: 50%; position: relative; z-index: 2; }
-.intro-image { width: 50%; position: relative; z-index: 2; }
-
-.art { position: absolute; height: auto; }
-.art-1 { left: -220px; top: 25%; }
-.art-2 { left: 45%; top: 25px; }
-.art-3 { bottom: 25px; left: 35%; }
-.art-31  { bottom: 25px; left: 35%; }
 
 /* ------------------------------------------------------------ *\
 	Section About
@@ -124,12 +121,10 @@ img { max-width: 100%; height: auto; }
 
 .section-about { font-size: 20px; }
 .section-about .section-head:before { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(90, 55, 51, 0.3); z-index: 1; }
-.section-about .section-head { position: relative; background: url(images/about.jpg); background-size: cover; background-position: bottom center; display: flex; flex-wrap: wrap; align-items: center; min-height: 400px; background-attachment: fixed; position: relative; z-index: 1; }
 
 .section-about .shell { position: relative; }
 
 .section-about .section-body { position: relative; z-index: 2; }
-.section-about .section-content { padding: 50px 0; }
 
 /* ------------------------------------------------------------ *\
 	Section Products
@@ -140,7 +135,7 @@ img { max-width: 100%; height: auto; }
 .section-products:before { content: ""; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAtCAYAAAADfVPBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NjdDRTIxMDk3NDAxMUU4OEI4RUEzNzIxNzA0RDk3QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NjdDRTIxMTk3NDAxMUU4OEI4RUEzNzIxNzA0RDk3QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY2N0NFMjBFOTc0MDExRTg4QjhFQTM3MjE3MDREOTdCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY2N0NFMjBGOTc0MDExRTg4QjhFQTM3MjE3MDREOTdCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+u1rxPQAAA7lJREFUeNrsmHtMTmEcx99OdLFCYlkuucXIEOHNakabbC4ztxAtl7bMsHKrmM1MaWShaYZhNJcxG6I2t0UWMrJcJrfRKDMstFjJ98fXvGtv3tt5ttbOb/vs/PGc9/zO93l+z/Oe39dt3ugRjaY/MREUmtTERrAJlIFoUK3Xg/NKSn9fY81h3TVc94JdoABcA910FCET9JFCUoAHqALpes4UhGTh8kbEJIKVYCzoCSrBThef3w/cABdBEegEMsEgrlIq+AZiXMwTByH1uCaDJM1iQJL2ASvAUlAHFjv4cG+QCyqAH4gE08Ani3s2cywfHAf3wBAH84SDcnAYHAReKLdszcqNu1kO+8B+8AxE2JFAVrcWLAILQQhXx1p8BrPBUODOvZQHfG3k8AdnwE3wVSoAIhLAdxnU/vPD5aCv1CK4Ds6CjlbuGwdeg2ywHXiCQ3bO8AOuygIwE9SA1c3cKyv6gas9BZjBc8sbNBvJXvBlZSOHsly2ckxK5TK4Ah6DHmCNk7V/lJOwBWzjIRHNsVk8RDaA9aAzOG/tIZqdyQr5sqvAOnAXPOUeG8/ElTocTPLCAeA2T9dicJL5fWydgpqDyXbIZgPDuRq9wVWd/5Peg6kgHoxhZczl6WfSU4yEbLYn3Ecqo5gCiuz9geZkIqnv9orFdOH7dVUtxs3UAkMztexobC1iGluTmFZXZoYYQ4whxhCjVsyPJt2jingHfoK3KsX0Av3ZDquMGew841WJERfnJRsy6Tq/gDk6ixjIfkYcl9Ps8W/RJNFFTBxoYCstRIEgcAEcY/sb4qIIT/oOj9iIDWYrPZLuTgXHPZwVE8nWWVyQPaAtyLH4dhKraBh7nHJ2hT5OCEmlGxTDNlksqYccE5cvmCZJLHMlOyImgH22NEbVfJisSL2Ve8s4e1Juk1l6aXaKmGD6Zwqms0c61cy9YpK0o3GSxfeKsiUmgwnMfLlw2k224gSTZdCYqOLvrcXfdruQfoI/zQp7Iol+hFTCpVhzWAEIaipmPmc+hXaPuCD5TpRMGmtcvK1zVjZvLks3EIwCk+i+OBKVXJUIluQrCMoRMWKqibN4hLPrzWV0JeQ/aDrLz5ebN5MvISZhAhgA7rjqE+SVlIqlvAwkapwZ2Xih3GB1Oh6zpZy5JWAt95ecWvv1PMshSA4nL43nuNio9xX+AR7gV0O2qgQQVC9iOrC0VIY7r4HGh6YhxhBjiDHEGGIMMYYY/cXU8rtJZTSwM61RmaQNCGM/rzL8+LUcrDLJLwEGABaP2O1w44HvAAAAAElFTkSuQmCC); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; display: block; zoom: 1; opacity: 0.06; }
 
 .products { display: flex; flex-wrap: wrap; padding-top: 35px; justify-content: center; }
-.product { display: block; width: 390px; padding: 15px; text-decoration: none; color: #5A3733; }
+.product { display: block; width: 390px; padding: 15px; text-decoration: none; color: #333; }
 .product:hover { text-decoration: none; }
 .product:hover .product-inner { border-color: #ed3237; }
 .product-inner { height: 100%; background-color: #fff; border-radius: 10px; text-align: center; padding: 35px 15px; border: 1px solid transparent; transition: border-color 0.2s; }
