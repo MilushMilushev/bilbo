@@ -16,16 +16,40 @@
 <body>
 	<div class="wrapper">
 		<header class="header">
-			<a href="./" class="logo" alt="bilbo honey logo">
-				<i class="fas fa-thumbs-up fa-5x"></i>
-			</a>
+			<div class="shell">
+				<div class="header-inner">
+					<a href="./" class="logo">
+						<img src="css/images/logo.png" alt="bilbo honey logo">
+					</a>
 
-			<nav class="nav">
-				<ul>
-					<li>
-						<a href="#"></a>
-					</li>
-				</ul>
-			</nav><!-- /.nav -->
+					<nav class="nav">
+						<ul>
+							<li>
+								<a href="./">
+									<span>Home</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="./our-products">
+									<span>Products</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="./contact">
+									<span>Contacts</span>
+								</a>
+							</li>
+						</ul>
+
+						<a href="./catalog.pdf" class="btn btn-download" target="_blank" rel="noreferrer noopener">
+							<i class="fa fa-download"></i> 
+
+							<span>Our Catalog</span>
+						</a>
+					</nav><!-- /.nav -->
+				</div><!-- /.header-inner -->
+			</div><!-- /.shell -->
 		</header><!-- /.header -->
 		

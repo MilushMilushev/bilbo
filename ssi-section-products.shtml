@@ -1,0 +1,84 @@
+<section class="section-products">
+	<div class="shell">
+		<h4 class="title-tertiary">Types</h4>
+		
+		<h2 class="title-secondary">Our Products</h2>
+		
+		<div class="section-body">
+			<div class="products">
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/white-honey-small.png" alt="Jar of 250gr full of White Honey" />
+							
+							<h5>White honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+				
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/linden-honey-small.png" alt="Jar of 250gr full of Linden Honey" />
+							
+							<h5>Linden honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+				
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/lavender-honey-small.png" alt="Jar of 250gr full of Lavender Honey" />
+							
+							<h5>Lavender honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+				
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/acacia-honey-small.png" alt="Jar of 250gr full of Acacia Honey" />
+							
+							<h5>Acacia honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+				
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/oak-honey-small.png" alt="Jar of 250gr full of Oak Honey" />
+							
+							<h5>Oak honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+				
+				<a href="#" class="product">
+					<div class="product-inner">
+						<div class="product-overlay"></div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/rose-honey-small.png" alt="Jar of 250gr full of Rose Honey" />
+							
+							<h5>Rose honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
+			</div><!-- /.products -->
+		</div><!-- /.section-body -->
+	</div><!-- /.shell -->
+
+</section><!-- /.section-products -->
