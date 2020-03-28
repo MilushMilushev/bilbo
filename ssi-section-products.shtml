@@ -1,12 +1,10 @@
 <section class="section-products">
-	<div class="shell">
-		<h4 class="title-tertiary">Types</h4>
-		
+	<div class="shell">		
 		<h2 class="title-secondary">Our Products</h2>
 		
 		<div class="section-body">
 			<div class="products">
-				<a href="#" class="product">
+				<a href="./white-honey" class="product">
 					<div class="product-inner">
 						<div class="product-overlay"></div><!-- /.product-overlay -->
 						

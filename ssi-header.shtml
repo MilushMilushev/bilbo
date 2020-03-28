@@ -9,9 +9,15 @@
 	
 	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Signika:400,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css" />
+	
+	<script src="https://kit.fontawesome.com/63ccb3b168.js" crossorigin="anonymous" SameSite="None" Secure></script>
 
-	<script src="https://kit.fontawesome.com/63ccb3b168.js" crossorigin="anonymous" SameSite="none"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 </head>
 <body>
 	<div class="wrapper">

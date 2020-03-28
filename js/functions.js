@@ -12,4 +12,12 @@
 		    event.preventDefault();
 		});
 	});
+
+	$win.on('load', function() {
+		$('.slider .slides').slick({
+			dots: true,
+			arrows: false,
+			fade: true,
+		})
+	});
 })(jQuery, window, document);

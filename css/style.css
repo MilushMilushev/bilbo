@@ -63,7 +63,7 @@ img { max-width: 100%; height: auto; }
 .has-ds p { margin-bottom: 30px; }
 .has-ds p:last-child { margin-bottom: 0px; }
 
-.title-primary { font-family: 'Signika', sans-serif; color: #fff; font-size: 72px; position: relative; z-index: 2; line-height: 1; margin-bottom: 15px; font-weight: normal; }
+.title-primary { font-family: 'Signika', sans-serif; color: #fff; font-size: 70px; position: relative; z-index: 2; line-height: 1; margin-bottom: 30px; }
 .title-secondary { font-size: 48px; font-family: 'Signika', sans-serif; text-align: center; margin-bottom: 20px; }
 .title-tertiary { color: #ed3237; font-size: 18px; text-align: center; }
 
@@ -79,11 +79,11 @@ section { padding: 50px 0; }
 	Buttons
 \* ------------------------------------------------------------ */
 
-.btn { display: inline-block; transition: background 0.2s; background: transparent; color: inherit; border-radius: 36px; text-align: center; border: 1px solid #333; }
+.btn { display: inline-block; transition: background 0.2s; background: transparent; color: #ed3237; border-radius: 36px; text-align: center; border: 1px solid #ed3237; }
 .btn:hover { text-decoration: none; background: #ed3237; color: #fff; border-color: #ed3237; }
 .btn.btn-download { padding: 10px 15px; }
 .btn-download span { display: inline-block; vertical-align: middle; font-weight: 700; margin-left: 5px; }
-.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #fff; }
+.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #fff; border-width: 2px; color: #fff; }
 .btn.btn-large:hover { background: #fff; color: #ed3237; }
 
 /* ------------------------------------------------------------ *\
@@ -109,11 +109,15 @@ section { padding: 50px 0; }
 \* ------------------------------------------------------------ */
 
 .intro { overflow: hidden; background-image: url(images/about.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; position: relative; z-index: 1; color: #fff; }
+.intro:before { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(90, 55, 51, 0.5); z-index: 1; }
 .intro .shell { position: relative; z-index: 2; }
-.intro:before { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(90, 55, 51, 0.3); z-index: 1; }
 .intro p { font-size: 20px; margin-bottom: 30px; }
 .intro-body { display: flex; align-items: center; min-height: 520px; padding: 64px 0; position: relative;  }
-.intro-content { width: 50%; position: relative; z-index: 2; }
+.intro-content { width: 100%; position: relative; z-index: 2; text-align: center; }
+
+.intro-white-honey { background-image: url(images/banner-white-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+
+.intro-contact { background-image: url(images/contact.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
 
 /* ------------------------------------------------------------ *\
 	Section About
@@ -139,7 +143,7 @@ section { padding: 50px 0; }
 .product:hover { text-decoration: none; }
 .product:hover .product-inner { border-color: #ed3237; }
 .product-inner { height: 100%; background-color: #fff; border-radius: 10px; text-align: center; padding: 35px 15px; border: 1px solid transparent; transition: border-color 0.2s; }
-.product-inner img { width: 50%; margin-bottom: 20px; }
+.product-inner img { width: 174px; margin-bottom: 20px; }
 .product-inner h5 { font-size: 24px; font-family: 'Signika', sans-serif; }
 
 /* ------------------------------------------------------------ *\
@@ -194,4 +198,32 @@ section { padding: 50px 0; }
 \* ------------------------------------------------------------ */
 
 .footer { font-size: 16px; text-align: center; padding: 15px 0; }
-.footer a { color: #ed3237; }
+.footer p a { color: #ed3237; }
+.whatsup { position: fixed; display: inline-block; bottom: 15px; right: 15px; font-size: 50px; color: rgba(114, 130, 152, 0.6); z-index: 5; }
+.whatsup:hover { color: #00e676; }
+
+/* ------------------------------------------------------------ *\
+	Single Product
+\* ------------------------------------------------------------ */
+
+.slider-clip { width: 310px; margin: 0 auto 30px; }
+.slide { text-align: center; }
+.slide-image { width: 174px; display: inline-block; }
+.slide-image-big { width: 187px; }
+.slide-image img { width: 100%; height: auto; }
+
+.slick-dots { list-style: none; text-align: center; }
+.slick-dots li { display: inline-block; margin: 0 5px; }
+.slick-dots button { font-size: 0; line-height: 0; text-indent: -4004px; display: block; width: 15px; height: 15px; border-radius: 50%; border: none; background-color: rgba(114, 130, 152, 0.6); }
+.slick-dots .slick-active button { background-color: #ed3237; }
+
+/* ------------------------------------------------------------ *\
+	Section Contact
+\* ------------------------------------------------------------ */
+
+
+.contacts { list-style: none; text-align: center; font-family: 'Signika', sans-serif; padding-top: 40px; }
+.contacts li { margin-bottom: 45px; }
+.contacts i { font-size: 50px; margin-bottom: 10px; color: #ed3237; }
+.contacts a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+.contacts a:hover { border-bottom-color: #333; }
