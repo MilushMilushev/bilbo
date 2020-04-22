@@ -43,16 +43,16 @@
 							</li>
 							
 							<li>
-								<a href="./contact">
+								<a href="./contact.php">
 									<span>Contacts</span>
 								</a>
 							</li>
 						</ul>
 
 						<a href="./catalog.pdf" class="btn btn-download" target="_blank" rel="noreferrer noopener">
-							<i class="fa fa-download"></i> 
+							<i class="fa fa-file-alt"></i> 
 
-							<span>Our Catalog</span>
+							<span>Check Our Catalog</span>
 						</a>
 					</nav><!-- /.nav -->
 				</div><!-- /.header-inner -->

@@ -60,8 +60,10 @@ img { max-width: 100%; height: auto; }
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 .shell-secondary { max-width: 960px; }
 
-.has-ds p { margin-bottom: 30px; }
-.has-ds p:last-child { margin-bottom: 0px; }
+.has-ds p { padding-top: 30px; }
+.has-ds p:first-child { padding-top: 0px; }
+
+.has-ds ul { list-style: inside; padding: 10px 0 20px; }
 
 .title-primary { font-family: 'Signika', sans-serif; color: #fff; font-size: 70px; position: relative; z-index: 2; line-height: 1; margin-bottom: 30px; }
 .title-secondary { font-size: 48px; font-family: 'Signika', sans-serif; text-align: center; margin-bottom: 20px; }
@@ -73,24 +75,25 @@ section { padding: 50px 0; }
 	Section Secondary
 \* ------------------------------------------------------------ */
 
-.section-secondary { padding: 50px 0; text-align: center; }
+.section-secondary { text-align: center; }
 
 /* ------------------------------------------------------------ *\
 	Buttons
 \* ------------------------------------------------------------ */
 
-.btn { display: inline-block; transition: background 0.2s; background: transparent; color: #ed3237; border-radius: 36px; text-align: center; border: 1px solid #ed3237; }
+.btn { display: inline-block; transition: background 0.2s, color 0.2s, border-color 0.2s; background: transparent; color: #ed3237; border-radius: 36px; text-align: center; border: 1px solid #ed3237; }
+.btn i { vertical-align: middle; font-size: 18px; }
 .btn:hover { text-decoration: none; background: #ed3237; color: #fff; border-color: #ed3237; }
 .btn.btn-download { padding: 10px 15px; }
 .btn-download span { display: inline-block; vertical-align: middle; font-weight: 700; margin-left: 5px; }
-.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #fff; border-width: 2px; color: #fff; }
-.btn.btn-large:hover { background: #fff; color: #ed3237; }
+.btn.btn-large { padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #ed3237; border-width: 2px; color: #fff; background: #ed3237; }
+.btn.btn-large i { font-size: 24px; }
+.btn.btn-large:hover { background: #fff; color: #ed3237; border-color: #fff; }
 
 /* ------------------------------------------------------------ *\
 	Header
 \* ------------------------------------------------------------ */
 
-.header { }
 .logo { width: 119px; display: block; }
 .logo img { width: 100%; height: auto; }
 
@@ -111,13 +114,19 @@ section { padding: 50px 0; }
 .intro { overflow: hidden; background-image: url(images/about.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; position: relative; z-index: 1; color: #fff; }
 .intro:before { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(90, 55, 51, 0.5); z-index: 1; }
 .intro .shell { position: relative; z-index: 2; }
-.intro p { font-size: 20px; margin-bottom: 30px; }
+.intro p { font-size: 20px; margin-bottom: 60px; }
 .intro-body { display: flex; align-items: center; min-height: 520px; padding: 64px 0; position: relative;  }
 .intro-content { width: 100%; position: relative; z-index: 2; text-align: center; }
 
 .intro-white-honey { background-image: url(images/banner-white-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
 
 .intro-contact { background-image: url(images/contact.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+
+.intro-linden-honey { background-image: url(images/banner-linden-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+.intro-lavender-honey { background-image: url(images/banner-lavender-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+.intro-acacia-honey { background-image: url(images/banner-acacia-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+.intro-oak-honey { background-image: url(images/banner-oak-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
+.intro-rose-honey { background-image: url(images/banner-rose-honey.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom center; }
 
 /* ------------------------------------------------------------ *\
 	Section About
@@ -140,18 +149,43 @@ section { padding: 50px 0; }
 
 .products { display: flex; flex-wrap: wrap; padding-top: 35px; justify-content: center; }
 .product { display: block; width: 390px; padding: 15px; text-decoration: none; color: #333; }
-.product:hover { text-decoration: none; }
-.product:hover .product-inner { border-color: #ed3237; }
-.product-inner { height: 100%; background-color: #fff; border-radius: 10px; text-align: center; padding: 35px 15px; border: 1px solid transparent; transition: border-color 0.2s; }
+.product-inner { height: 100%; background-color: #fff; border-radius: 10px; text-align: center; padding: 35px 15px; border: 1px solid transparent; transition: border-color 0.2s; position: relative; overflow: hidden; }
 .product-inner img { width: 174px; margin-bottom: 20px; }
 .product-inner h5 { font-size: 24px; font-family: 'Signika', sans-serif; }
+.product-overlay { background-color: rgba(255, 255, 255, 0.8); position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 1; display: flex; align-items: center; justify-content: center; font-family: 'Signika', sans-serif; visibility: hidden; opacity: 0; transition: visibility 0.2s, opacity 0.2s; font-size: 25px; display: none; }
+
+.product:hover { text-decoration: none; }
+.product:hover .product-overlay { visibility: visible; opacity: 1; color: #ed3237; }
+.product:hover .product-inner { border-color: #ed3237; }
+
+/* ------------------------------------------------------------ *\
+	Section Product Single
+\* ------------------------------------------------------------ */
+
+.table { max-width: 960px; margin: 0 auto; padding-top: 40px; }
+.table table { table-layout: fixed; width: 100%; font-family: Arial, sans-serif; }
+.table th { text-align: left; height: 60px; background-color: #ed3237; color: #fff; padding: 0 10px; }
+.table tr { border-bottom: 1px solid  #dee4ea; }
+.table tr:nth-child(odd) { background: #fbfbfb; }
+.table td { height: 60px; vertical-align: middle; padding: 0 10px; }
+
+.info-items { max-width: 340px; margin: 0 auto; font-family: Arial, sans-serif; padding-top: 40px; display: none; }
+.info-item { margin-bottom: 40px; }
+.info-item:last-child { margin-bottom: 0px; }
+.info-item-head { background-color: #ed3237; color: #fff; text-align: center; padding: 10px 0; }
+.info-item-body { border: 1px solid #dee4ea; border-top: none; }
+.info-item-row { border-bottom: 1px solid #dee4ea; display: flex; flex-wrap: wrap; align-items: center; text-align: center; }
+.info-item-row > * { width: 50%; padding: 10px 0; }
+.info-item-row > *:first-child { border-right: 1px solid #dee4ea; font-weight: 700; }
+.info-item-row:last-child { border-right: 1px solid #dee4ea; background: #fbfbfb; }
+.info-item-row:last-child { border-bottom: none; }
 
 /* ------------------------------------------------------------ *\
 	Section Certificates
 \* ------------------------------------------------------------ */
 
 .section-certificates .section-body { padding: 15px 0; }
-.section-certificates .section-body > img { width: 194px; height: auto; margin-bottom: 45px; }
+.section-certificates .section-body > img { width: 194px; height: auto; }
 
 .certificates { list-style: none; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 25px 0; }
 .certificate { width: 390px; padding: 15px; }
@@ -166,7 +200,7 @@ section { padding: 50px 0; }
 	Section Features
 \* ------------------------------------------------------------ */
 
-.section-features { background-color: #F8F7F1; background-color: #FFD832; padding: 50px 0; }
+.section-features { background-color: #FFD832; padding: 50px 0; }
 .section-features .shell { position: relative; }
 
 .features { display: flex; flex-wrap: wrap; justify-content: center; padding-top: 35px; }
@@ -199,8 +233,8 @@ section { padding: 50px 0; }
 
 .footer { font-size: 16px; text-align: center; padding: 15px 0; }
 .footer p a { color: #ed3237; }
-.whatsup { position: fixed; display: inline-block; bottom: 15px; right: 15px; font-size: 50px; color: rgba(114, 130, 152, 0.6); z-index: 5; }
-.whatsup:hover { color: #00e676; }
+.whatsup { position: fixed; display: inline-block; bottom: 15px; right: 15px; font-size: 50px; z-index: 5; background-color: #00e676; z-index: 5; width: 60px; height: 60px; line-height: 60px; color: #fff; border-radius: 12px; transition: background-color 0.2s; }
+.whatsup:hover { background-color: #02c566; }
 
 /* ------------------------------------------------------------ *\
 	Single Product
@@ -210,7 +244,9 @@ section { padding: 50px 0; }
 .slide { text-align: center; }
 .slide-image { width: 174px; display: inline-block; }
 .slide-image-big { width: 187px; }
+.slide-image { min-height: 250px; }
 .slide-image img { width: 100%; height: auto; }
+.slide h5 { font-size: 30px; font-family: 'Signika', sans-serif; }
 
 .slick-dots { list-style: none; text-align: center; }
 .slick-dots li { display: inline-block; margin: 0 5px; }
@@ -221,9 +257,23 @@ section { padding: 50px 0; }
 	Section Contact
 \* ------------------------------------------------------------ */
 
-
 .contacts { list-style: none; text-align: center; font-family: 'Signika', sans-serif; padding-top: 40px; }
 .contacts li { margin-bottom: 45px; }
 .contacts i { font-size: 50px; margin-bottom: 10px; color: #ed3237; }
 .contacts a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
 .contacts a:hover { border-bottom-color: #333; }
+
+/*  Form  */
+.form { margin-bottom: 50px; }
+.form textarea,
+.form .field { width: 100%; padding: 12px; border: 1px solid #aaa; }
+.form .form-row { margin-bottom: 20px; }
+.form label { font-family: 'Signika', sans-serif; font-size: 22px; margin-bottom: 4px; display: inline-block; }
+.form .checkbox a { color: inherit; color: #ed3237; border-bottom: 1px solid transparent; }
+.form .checkbox a:hover { border-color: #ed3237; text-decoration: none; }
+
+.form-contact { max-width: 500px; margin: 0 auto 50px; }
+
+.form-actions { text-align: center; padding: 30px 0; }
+.form-btn { border: none; padding: 16px 30px; font-size: 20px; min-width: 180px; border-color: #ed3237; color: #fff; background: #ed3237; border-radius: 36px; text-align: center; border: 1px solid #ed3237; display: inline-block; transition: background 0.2s, color 0.2s; font-weight: 700; }
+.form-btn:hover { color: #ed3237; background: transparent; }

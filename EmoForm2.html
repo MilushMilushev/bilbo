@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<title>Contact form</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript">
+			function validateForm() {
+				if (document.getElementById("companyName").value.length == 0) { 
+					alert("Please enter the Company name field.");
+					return false; 
+				}
+				
+				if (document.getElementById("contactPerson").value.length == 0) { 
+					alert("Please enter the Contact Person field.");
+					return false; 
+				}
+				
+				if (document.getElementById("email").value.length == 0) { 
+					alert("Please enter the Email field.");
+					return false; 
+				}
+				
+				if (document.getElementById("phone").value.length == 0) { 
+					alert("Please enter the Phone field.");
+					return false; 
+				}
+				
+				if (document.getElementById("message").value.length == 0) { 
+					alert("Please enter the Message field.");
+					return false; 
+				}
+				
+				if(!document.getElementById("agree").checked) {
+					alert("You need to agree and accept the GDRP rules.");
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</head>
+	<body onload="init()" style="position: relative; min-height: 100%; top: 0px;margin: 5px; padding: 5px">
+		<form action="contact.php" onsubmit="return validateForm()" method="post">
+			<div class="form-group">
+				<table id="details" border="1" style="white-space: nowrap">
+					<tbody>
+						<tr>
+							<td>Company name:</td>
+							<td><input type="text" id="companyName" name="companyName" class="form-control"/></td>
+						</tr>
+						<tr>
+							<td>Contact person:</td>
+							<td><input type="text" id="contactPerson" name="contactPerson" class="form-control"/></td>	
+						</tr>
+										<tr>
+							<td>Email:</td>
+							<td><input type="email" id="email" name="email" class="form-control"/></td>
+						</tr>
+						<tr>
+							<td>Phone:</td>
+							<td><input type="text" id="phone" name="phone" class="form-control"/></td>	
+						</tr>
+						<tr>
+							<td>Message:</td>
+							<td><textarea rows="10" id="message" name="message" class="form-control" style="width: 100%; box-sizing: border-box;resize: none"></textarea></td>	
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="form-group form-check">
+				<label class="checkbox">
+					<input type="checkbox" id="agree"> I am aware of and accept <a href="gdpr.html">GDPR Rules listed here</a>.
+				</label>
+			</div>
+			<button type="submit" class="btn btn-danger">GET A QUOTE</button>
+		</form>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<title>Quote generator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript">
+			var rowId=2;
+			
+			function init() {
+				setInputFilter(document.getElementById("goodRow1").children[2].children[0], function(value) {
+					return /^\d*$/.test(value);
+				});
+			}
+			
+			function cloneRow() {
+				var row = document.getElementById("goodRow1");
+				var table = document.getElementById("goodsTable");
+				var clone = row.cloneNode(true);
+				clone.id = "goodRow" + rowId;
+				clone.children[0].children[0].name="item" + rowId;
+				clone.children[2].children[0].name="qtty" + rowId;
+				clone.children[2].children[0].id="qtty" + rowId;
+				table.appendChild(clone);
+				document.getElementById(clone.id).children[2].children[0].value = "";
+				setInputFilter(document.getElementById(clone.id).children[2].children[0], function(value) {
+					return /^\d*$/.test(value);
+				});
+				rowId++;
+			}
+			
+			function changeQtty(selectedRowId) {
+				var row = document.getElementById(selectedRowId);
+				var selectedIndex = row.children[0].children[0].selectedIndex;
+				if(selectedIndex % 2 == 0) {
+					row.children[1].innerHTML = "960";
+				}
+				else {
+					row.children[1].innerHTML = "480";
+				}
+			}
+			
+			function setInputFilter(textbox, inputFilter) {
+				["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+					textbox.addEventListener(event, function() {
+						if (inputFilter(this.value)) {
+							this.oldValue = this.value;
+							this.oldSelectionStart = this.selectionStart;
+							this.oldSelectionEnd = this.selectionEnd;
+						}
+						else if (this.hasOwnProperty("oldValue")) {
+							this.value = this.oldValue;
+							this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+						} 
+						else {
+							this.value = "";
+						}
+					});
+				});
+			}
+			
+			function validateForm() {
+				for(i = 0;i<document.getElementById("goodsTable").rows.length;i++)
+				{
+					if (document.getElementById("qtty" + (i+1)).value.length == 0) { 
+						alert("Please enter the quantity for item " + (i+1) + ".");
+						return false; 
+					}
+				}
+				
+				if (document.getElementById("postCode").value.length == 0) { 
+					alert("Please enter the post code field.");
+					return false; 
+				}
+				
+				if (document.getElementById("country").value.length == 0) { 
+					alert("Please enter the country field.");
+					return false; 
+				}
+				
+				if (document.getElementById("country").value.length == 0) { 
+					alert("Please enter the country field.");
+					return false; 
+				}
+				
+				if (document.getElementById("companyName").value.length == 0) { 
+					alert("Please enter the Company name field.");
+					return false; 
+				}
+				
+				if (document.getElementById("contactPerson").value.length == 0) { 
+					alert("Please enter the Contact Person field.");
+					return false; 
+				}
+				
+				if (document.getElementById("email").value.length == 0) { 
+					alert("Please enter the Email field.");
+					return false; 
+				}
+				
+				if (document.getElementById("phone").value.length == 0) { 
+					alert("Please enter the Phone field.");
+					return false; 
+				}
+				
+				if(!document.getElementById("agree").checked) {
+					alert("You need to agree and accept the GDRP rules.");
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</head>
+	<body onload="init()" style="position: relative; min-height: 100%; top: 0px;margin: 5px; padding: 5px">
+		<form action="getQuote.php" onsubmit="return validateForm()" method="post">
+			<div class="form-group">
+				<table id="goodsTable" border="1">
+					<tbody>
+						<tr>
+							<td><b>Product name</b></td>
+							<td><b>Minimum order quantity(pcs)</b></td>
+							<td><b>Requested quantity(pcs)</b></td>
+						</tr>
+						<tr id="goodRow1">
+							<td>
+								<select name="item1" onchange="changeQtty(this.parentNode.parentNode.id)">
+									<option selected>White honey 230 g</option>
+									<option>White honey 430 g</option>
+									<option>Linden honey 250 g</option>
+									<option>Linden honey 500 g</option>
+									<option>Lavender honey 250 g</option>
+									<option>Lavender honey 500 g</option>
+									<option>Acacia honey 250 g</option>
+									<option>Acacia honey 500 g</option>
+									<option>Oak honey 250 g</option>
+									<option>Oak honey 500 g</option>
+									<option>Rose honey 230 g</option>
+									<option>Rose honey 430 g</option>
+								</select>
+							</td>
+							<td>960</td>
+							<td>
+								<input name="qtty1" id="qtty1" type="text" class="form-control"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/>
+				<input type="button" onclick="cloneRow()" value="Add product" />
+			</div>
+			<br/>
+			<br/>
+			<div class="form-group">
+				<table id="deliveryDetails" border="1" style="white-space: nowrap">
+					<tbody>
+						<tr>
+							<td><b>Delivery address</b></td>
+							<td><b>Preferred way of transportation</b></td>
+							<td><b>Additional requirements or questions</b></td>
+						</tr>
+						<tr>
+							<td>
+								<table style="white-space: nowrap;">
+									<tbody>
+										<tr>
+											<td>post code:</td>
+											<td><input type="text" class="form-control" id="postCode" name="postCode"/></td>
+										</tr>
+										<tr>
+											<td>country:</td>
+											<td><input type="text" class="form-control" id="country" name="country"/></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td>
+								<select id="shippingPreferences" name="shippingPreferences" style="width: 100%">
+									<option selected>by road</option>
+									<option>by air</option>
+									<option>by sea</option>
+								</select>
+							</td>
+							<td>
+								<textarea rows="4" id="comment" name="comment" class="form-control" style="width: 100%; box-sizing: border-box;resize: none"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<br/>
+			<div class="form-group">
+				<table id="details" border="1" style="white-space: nowrap">
+					<tbody>
+						<tr>
+							<td>Company name:</td>
+							<td><input type="text" id="companyName" name="companyName" class="form-control"/></td>
+						</tr>
+						<tr>
+							<td>Contact person:</td>
+							<td><input type="text" id="contactPerson" name="contactPerson" class="form-control"/></td>	
+						</tr>
+										<tr>
+							<td>Email:</td>
+							<td><input type="email" id="email" name="email" class="form-control"/></td>
+						</tr>
+						<tr>
+							<td>Phone:</td>
+							<td><input type="text" id="phone" name="phone" class="form-control"/></td>	
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="form-group form-check">
+				<label class="checkbox">
+					<input type="checkbox" id="agree"> I am aware of and accept <a href="gdpr.html">GDPR Rules listed here</a>.
+				</label>
+			</div>
+			<button type="submit" class="btn btn-danger">GET A QUOTE</button>
+		</form>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
