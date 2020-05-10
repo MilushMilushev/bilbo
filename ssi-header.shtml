@@ -55,6 +55,16 @@
 							<span>Check Our Catalog</span>
 						</a>
 					</nav><!-- /.nav -->
+
+					<a href="#" class="nav-trigger-wrap">
+						<span class="nav-trigger">
+							<span></span>
+							
+							<span></span>
+							
+							<span></span>
+						</span>
+					</a>
 				</div><!-- /.header-inner -->
 			</div><!-- /.shell -->
 		</header><!-- /.header -->

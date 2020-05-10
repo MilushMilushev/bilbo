@@ -17,26 +17,26 @@
 		<form action="contact-success.php" onsubmit="" method="post" id="contact-form" class="form form-contact">
 			<div class="form-group" id="details">
 				<div class="form-row">
-					<label for="companyName" class="form-label">Company Name</label>
+					<label for="companyName" class="form-label">Company Name <span class="asterisk">*</span></label>
 					
 					<div class="form-controls">
-						<input type="text" class="field" name="companyName" id="companyName" value="" required>
+						<input type="text" class="field" name="companyName" id="companyName" required>
 					</div><!-- /.form-controls -->
 				</div><!-- /.form-row -->
 				
 				<div class="form-row">
-					<label for="contactPerson" class="form-label">Contact Person</label>
+					<label for="contactPerson" class="form-label">Contact Person <span class="asterisk">*</span></label>
 					
 					<div class="form-controls">
-						<input type="text" class="field" name="contactPerson" id="contactPerson" value="" required>
+						<input type="text" class="field" name="contactPerson" id="contactPerson" required>
 					</div><!-- /.form-controls -->
 				</div><!-- /.form-row -->
 				
 				<div class="form-row">
-					<label for="email" class="form-label">Email</label>
+					<label for="email" class="form-label">Email <span class="asterisk">*</span></label>
 					
 					<div class="form-controls">
-						<input type="email" class="field" name="email" id="email" value="" required>
+						<input type="email" class="field" name="email" id="email" required>
 					</div><!-- /.form-controls -->
 				</div><!-- /.form-row -->
 				
@@ -44,12 +44,12 @@
 					<label for="phone" class="form-label">Phone</label>
 					
 					<div class="form-controls">
-						<input type="text" class="field" name="phone" id="phone" value="">
+						<input type="text" class="field" name="phone" id="phone">
 					</div><!-- /.form-controls -->
 				</div><!-- /.form-row -->
 
 				<div class="form-row">
-					<label for="message" class="form-label">Message</label>
+					<label for="message" class="form-label">Message <span class="asterisk">*</span></label>
 					
 					<div class="form-controls">
 						<textarea class="textarea" name="message" id="message" rows="5" required></textarea>
@@ -59,12 +59,12 @@
 
 			<div class="form-group form-check">
 				<label class="checkbox">
-					<input type="checkbox" id="agree" required> I am aware of and accept <a href="gdpr.html" target="_blank">GDPR Rules listed here</a>
+					<input type="checkbox" id="agree" required> I am informed and I accept the GDPR Terms listed <a href="gdpr.html" target="_blank">here</a> <span class="asterisk">*</span>
 				</label>
 			</div>
 
 			<div class="form-actions">
-				<button type="submit" class="form-btn">GET A QUOTE</button>
+				<button type="submit" class="form-btn">SEND</button>
 			</div><!-- /.form-actions -->
 		</form>
 

@@ -3,9 +3,15 @@
 				<p class="copyright"><a href="./">Bilbo</a> &copy; 2020. All rights reserved.</p><!-- /.copyright -->
 			</div><!-- /.shell -->
 
-			<a href="https://api.whatsapp.com/send?phone=359877877478" class="whatsup">
-				<i class="fa fa-whatsapp"></i>
-			</a>
+			<div class="page-actions">
+				<a href="./quote.php" class="btn-quote" title="Get a free quote">
+					<i class="fa fa-comment-dollar"></i>
+				</a>
+				
+				<a href="https://api.whatsapp.com/send?phone=359877877478" class="whatsup">
+					<i class="fab fa-whatsapp"></i>
+				</a>
+			</div><!-- /.page-actions -->
 		</footer><!-- /.footer -->
 	</div><!-- /.wrapper -->
 </body>

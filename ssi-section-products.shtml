@@ -87,6 +87,20 @@
 						</div><!-- /.product-content -->
 					</div><!-- /.product-inner -->
 				</a>
+
+				<a href="./flower-honey" class="product">
+					<div class="product-inner">
+						<div class="product-overlay">
+							<strong>SEE MORE</strong>
+						</div><!-- /.product-overlay -->
+						
+						<div class="product-content">
+							<img src="css/images/products/flower-honey-small.jpg" alt="Jar of 250gr full of Flower Honey" />
+							
+							<h5>Flower honey</h5>
+						</div><!-- /.product-content -->
+					</div><!-- /.product-inner -->
+				</a>
 			</div><!-- /.products -->
 		</div><!-- /.section-body -->
 	</div><!-- /.shell -->

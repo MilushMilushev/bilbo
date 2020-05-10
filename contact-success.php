@@ -2,11 +2,11 @@
 if(isset($_POST)) {
 	$text="";
 	if (!empty($_POST['companyName'])) {
-		$text=$text."Фирма: ".$_POST['companyName']."\r\n";
+		$text=$text."Company Name: ".$_POST['companyName']."\r\n";
 	}
 
 	if (!empty($_POST['contactPerson'])) {
-		$text=$text."Човек за връзка: ".$_POST['contactPerson']."\r\n";
+		$text=$text."Contact Person: ".$_POST['contactPerson']."\r\n";
 	}
 
 	if (!empty($_POST['email'])) {
@@ -14,16 +14,15 @@ if(isset($_POST)) {
 	}
 
 	if (!empty($_POST['phone'])) {
-		$text=$text."Телефон: ".$_POST['phone']."\r\n";
+		$text=$text."Phone: ".$_POST['phone']."\r\n";
 	}
 
 	if (!empty($_POST['message'])) {
-		$text=$text."Съобщение: ".$_POST['message'];
+		$text=$text."Message: ".$_POST['message'];
 	}
 
 	if(!empty($text)){
-		// mail('i0nfo@bilbohoney.eu,emil@bilbohoney.eu', 'Request bilbohoney.eu', $text);
-		mail('lort@abv.bg', 'Request bilbohoney.eu', $text);
+		mail('i0nfo@bilbohoney.eu,emil@bilbohoney.eu', 'Request bilbohoney.eu', $text);
 	}
 }
 ?>
