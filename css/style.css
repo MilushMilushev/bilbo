@@ -211,6 +211,7 @@ section { padding: 50px 0; }
 .table { max-width: 960px; margin: 0 auto; padding-top: 40px; }
 .table table { table-layout: fixed; width: 100%; font-family: Arial, sans-serif; }
 .table th { text-align: left; height: 60px; background-color: #ed3237; color: #fff; padding: 0 10px; }
+.table th:first-child { width: 85px; }
 .table tr { border-bottom: 1px solid  #dee4ea; }
 .table tr:nth-child(odd) { background: #fbfbfb; }
 .table td { height: 60px; vertical-align: middle; padding: 0 10px; }

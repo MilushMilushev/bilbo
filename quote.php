@@ -12,7 +12,7 @@
 
 <section class="section">
 	<div class="shell shell-secondary">
-		<h2 class="title-secondary">Free Quote</h2><!-- /.title-secondary -->
+		<h2 class="title-secondary">Request a free quote for our products by completing the form below.</h2><!-- /.title-secondary -->
 
 		<form action="quote-success.php" method="post" class="form form-quote">
 			<div class="form-group">

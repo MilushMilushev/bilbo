@@ -22,7 +22,7 @@ if(isset($_POST)) {
 	}
 
 	if(!empty($text)){
-		mail('i0nfo@bilbohoney.eu,emil@bilbohoney.eu', 'Request bilbohoney.eu', $text);
+		mail('info@bilbohoney.eu,emil@bilbohoney.eu', 'Request bilbohoney.eu', $text);
 	}
 }
 ?>
